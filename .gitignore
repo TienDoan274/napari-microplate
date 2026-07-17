@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+
+# Build / packaging
+build/
+dist/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Model weights (không commit — tải từ HF lúc runtime)
+*.pt
+*.pth
+*.joblib
+*.pkl
+*.onnx

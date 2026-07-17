@@ -1,0 +1,10 @@
+name: napari-microplate
+display_name: Microplate Pipeline
+contributions:
+  commands:
+    - id: napari-microplate.make_qwidget
+      python_name: napari_microplate._dock:MicroplateWidget
+      title: Make Microplate Pipeline widget
+  widgets:
+    - command: napari-microplate.make_qwidget
+      display_name: Microplate Pipeline

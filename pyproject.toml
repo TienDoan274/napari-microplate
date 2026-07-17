@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "napari-microplate"
+version = "0.1.0"
+description = "napari plugin — full microplate image pipeline (align plate → detect wells → classify wells)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{name = "Tien Doan"}]
+keywords = ["napari", "microplate", "YOLO", "EfficientNet", "biology", "image-analysis"]
+classifiers = [
+    "Framework :: napari",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+dependencies = [
+    "napari>=0.4.18",
+    "magicgui>=0.7",
+    "huggingface_hub>=0.20",
+    "numpy",
+    "opencv-python",
+    "matplotlib",
+    "tqdm",
+    "Pillow",
+    "PyYAML",
+    "requests",
+    "psutil",
+    "scipy",
+    "shapely",
+    "torch",
+    "torchvision",
+    "timm",
+    "joblib",
+    "scikit-learn",
+]
+
+[project.urls]
+Homepage = "https://github.com/TienDoan274/acam-asialab"
+Repository = "https://github.com/TienDoan274/acam-asialab"
+Issues = "https://github.com/TienDoan274/acam-asialab/issues"
+
+# npe2 discovery — napari đọc napari_microplate/napari.yaml
+[project.entry-points."napari.manifest"]
+"napari-microplate" = "napari_microplate:napari.yaml"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["napari_microplate*"]
+
+[tool.setuptools.package-data]
+"napari_microplate" = ["napari.yaml"]
+"napari_microplate._vendor" = ["**/*.yaml", "**/*.yml", "**/*.json", "**/*.cfg", "**/*.txt", "**/*.png"]

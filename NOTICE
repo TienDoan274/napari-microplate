@@ -1,0 +1,32 @@
+NOTICE
+======
+
+napari-microplate
+Copyright (C) 2026 Tien Doan
+Licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0+).
+See LICENSE for the full text.
+
+
+Vendored third-party code
+-------------------------
+
+This package includes a vendored copy of Ultralytics 8.3.2 in
+`napari_microplate/_vendor/ultralytics/`, modified to support single-channel
+grayscale input (`ch=1`) at inference time for well detection.
+
+  Original project:  https://github.com/ultralytics/ultralytics
+  Upstream license:  GNU Affero General Public License v3.0 (AGPL-3.0)
+  Upstream copyright: Ultralytics Inc.
+
+The vendored source retains its original AGPL-3.0 license. Because AGPL-3.0 is
+a strong copyleft license, the combination (this plugin + vendored ultralytics)
+is distributed under AGPL-3.0-or-later. See section 13 of the LICENSE for
+network-use obligations if you modify and serve this software over a network.
+
+
+Model weights
+-------------
+
+Pre-trained model weights are downloaded on first run from the HuggingFace Hub
+and are not bundled with this package. License terms for the weights are
+governed by the repository from which they are fetched.
