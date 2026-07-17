@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "napari-microplate"
-version = "0.1.0"
+version = "0.1.1"
 description = "napari plugin — full microplate image pipeline (align plate → detect wells → classify wells)"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -44,9 +44,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/TienDoan274/acam-asialab"
-Repository = "https://github.com/TienDoan274/acam-asialab"
-Issues = "https://github.com/TienDoan274/acam-asialab/issues"
+Homepage = "https://github.com/TienDoan274/napari-microplate"
+Repository = "https://github.com/TienDoan274/napari-microplate"
+Issues = "https://github.com/TienDoan274/napari-microplate/issues"
 
 # npe2 discovery — napari đọc napari_microplate/napari.yaml
 [project.entry-points."napari.manifest"]
