@@ -73,7 +73,7 @@ class MicroplatePipeline:
 
         # Stage 1
         self._model1 = EfficientNetCorner(variant=STAGE1_VARIANT, dropout=0.0).to(self.device)
-        ckpt = torch.load(str(self._w1), map_location=self.device)
+        ckpt = torch.load(str(self._w1), map_location=self.device, weights_only=False)
         state = ckpt['model_state'] if isinstance(ckpt, dict) and 'model_state' in ckpt else ckpt
         self._model1.load_state_dict(state)
         self._model1.eval()
