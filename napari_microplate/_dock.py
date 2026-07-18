@@ -50,11 +50,11 @@ def _pipeline_widget(
     save_dir: Path = Path.home(),
 ):
     if input_layer is None:
-        from napari.utils.notifications import warning
-        warning("Chọn 1 image layer chứa ảnh microplate raw trước.")
+        from napari.utils.notifications import show_warning
+        show_warning("Chọn 1 image layer chứa ảnh microplate raw trước.")
         return
 
-    from napari.utils.notifications import info
+    from napari.utils.notifications import show_info
 
     img_gray = _to_gray_uint8(input_layer.data)
 
@@ -96,7 +96,7 @@ def _pipeline_widget(
            f"Growth={counts['Growth']} "
            f"NoGrowth={counts['NoGrowth']} "
            f"NoAgar={counts['NoAgar']}")
-    info(msg)
+    show_info(msg)
     print(msg)
 
     if save_png:
@@ -106,7 +106,7 @@ def _pipeline_widget(
         stem = Path(str(input_layer.name)).stem or "result"
         out_path = save_dir / f"pipeline_{stem}.png"
         save_png(canvas, out_path)
-        info(f"Đã lưu: {out_path}")
+        show_info(f"Đã lưu: {out_path}")
 
 
 # npe2 trỏ tới callable này — magic_factory trả widget mới mỗi lần gọi.
