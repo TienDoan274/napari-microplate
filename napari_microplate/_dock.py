@@ -93,11 +93,17 @@ def _pipeline_widget(
         )
 
     msg = (f"Total wells: {len(out['boxes'])} — "
-           f"Growth={counts['Growth']} "
-           f"NoGrowth={counts['NoGrowth']} "
-           f"NoAgar={counts['NoAgar']}")
+           f"🟢 Growth={counts['Growth']} | "
+           f"🔴 NoGrowth={counts['NoGrowth']} | "
+           f"🟣 NoAgar={counts['NoAgar']}")
     show_info(msg)
     print(msg)
+
+    # Thêm legend vào layer description để dễ nhớ màu
+    legend_desc = ("🟢 Growth (green)\n"
+                   "🔴 NoGrowth (red)\n"
+                   "🟣 NoAgar (purple)")
+    viewer.layers["wells"].description = legend_desc
 
     if save_png:
         canvas, _ = draw_result(out, show_labels=True)
